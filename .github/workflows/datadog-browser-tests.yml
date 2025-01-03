@@ -19,9 +19,8 @@ jobs:
     - name: Install Datadog-ci
       run: npm install -g @datadog/datadog-ci
     - name: Run Datadog Browser Tests
-      continue-on-error: true
       env:
         DOCKER_BUILDKIT: 1
         ACTIONS_STEP_DEBUG: true
-      run: ls -l datadog; datadog-ci version; datadog-ci synthetics run-tests --config datadog/prod.json
+      run: ls; datadog-ci version; datadog-ci synthetics run-tests --config datadog/prod.json
 
