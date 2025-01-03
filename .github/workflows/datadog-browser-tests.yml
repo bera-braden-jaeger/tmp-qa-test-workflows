@@ -1,4 +1,4 @@
-name: Datadog Broswer Tests
+name: Datadog Browser Tests
 on:
   push:
     branches:
@@ -23,5 +23,5 @@ jobs:
       env:
         DOCKER_BUILDKIT: 1
         ACTIONS_STEP_DEBUG: true
-      run: pwd; which datadog-ci; datadog-ci --help; datadog-ci synthetics run-tests --config datadog/prod.json
+      run: ls -l datadog; datadog-ci version; datadog-ci synthetics run-tests --config datadog/prod.json
 
