@@ -13,13 +13,14 @@ jobs:
     steps:
     - name: Check out repository code
       uses: actions/checkout@v4
-    - name: Setup Chrome
-      uses: browser-actions/setup-chrome@v1
-      with:
-        chrome-version: 133
-        install-chromedriver: true
-        install-dependencies: true
-    - run: chrome --version
+    - name: Install Chrome
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y google-chrome-stable
+    - name: Install ChromeDriver
+      run: |
+        CHROME_VERSION=$(google-chrome --version | awk '{print $3}')
+        sudo apt-get install -y chromium-chromedriver
     - name: Setup Python
       uses: actions/setup-python@v5
       with:
