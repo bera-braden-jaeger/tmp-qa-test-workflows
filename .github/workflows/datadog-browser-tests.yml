@@ -2,9 +2,9 @@ name: Datadog Browser Tests
 on:
   schedule:
     - cron: "0 1 * * *"
-  push:
-    branches:
-      - main
+  # push:
+  #   branches:
+  #     - main
 jobs:
   tests:
     name: Testing 

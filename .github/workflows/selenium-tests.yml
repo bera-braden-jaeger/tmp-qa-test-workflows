@@ -1,0 +1,24 @@
+name: Selenium Tests
+on:
+  push:
+    branches:
+      - main
+jobs:
+  tests:
+    name: Testing 
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./selenium
+    steps:
+    - name: Check out repository code
+      uses: actions/checkout@v4
+    - name: Setup Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.13'
+        cache: 'pip' # caching pip dependencies
+    - run: pip install -r requirements.txt
+    - name: Run Basic Selenium Test
+      run: python run.py
+
