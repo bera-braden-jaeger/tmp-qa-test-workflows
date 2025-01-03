@@ -14,6 +14,7 @@ class TestExample(unittest.TestCase):
     def test_google_search(self):
         self.driver.get("https://www.google.com")
         self.assertIn("Google", self.driver.title)
+        print(self.driver.title)
         search_box = self.driver.find_element(By.NAME, "q")
         search_box.send_keys("Selenium")
         search_box.submit()
