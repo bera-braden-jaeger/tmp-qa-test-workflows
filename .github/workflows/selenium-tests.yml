@@ -5,7 +5,7 @@ on:
       - main
 jobs:
   tests:
-    name: Testing 
+    name: Selenium Testing 
     runs-on: ubuntu-latest
     defaults:
       run:

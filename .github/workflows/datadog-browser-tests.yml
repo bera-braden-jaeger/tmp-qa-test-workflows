@@ -7,7 +7,7 @@ on:
   #     - main
 jobs:
   tests:
-    name: Testing 
+    name: Datadog Testing 
     runs-on: ubuntu-latest
     steps:
     - name: Check out repository code
