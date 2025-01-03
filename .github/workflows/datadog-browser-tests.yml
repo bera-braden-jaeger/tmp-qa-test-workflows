@@ -5,6 +5,7 @@ on:
       - main
 env:
   DOCKER_BUILDKIT: 1
+  ACTIONS_RUNNER_DEBUG: true
 jobs:
   tests:
     name: Testing 
