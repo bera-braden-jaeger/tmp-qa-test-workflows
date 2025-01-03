@@ -5,26 +5,15 @@ on:
       - main
 env:
   DOCKER_BUILDKIT: 1
-  NPM_TOKEN: ${{ secrets.BERA_BOT_ACCESS_TOKEN }}
-  SERVICES: "audiences brandscape enterprise scenarios"
-  SCENARIO_ECONOMICS_URL: "http://10.10.4.14/api-scenario-economics"
-  ELASTIC_NODE: "https://bera-es-dev.es.us-east4.gcp.elastic-cloud.com:9243"
-  ELASTIC_USERNAME: "resp_reader"
-  ELASTIC_PASSWORD: ${{secrets.PLATFORM_ELASTIC_DEV_PASSWORD}}
 jobs:
-  build:
-    name: Install Datadog-ci
-    runs-on: self-hosted-basic
-    steps:
-      - uses: actions/checkout@v4
-      - name: Setup node
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ matrix.node }}
-      - run: npm install --save-dev @datadog/datadog-ci
   tests:
-    name: Test
-    runs-on: self-hosted-basic
+    name: Testing 
+    runs-on: ubuntu-latest
     steps:
-      - name: Run Datadog Browser Tests
-        run: datadog-ci synthetics run-tests --config datadog/prod.json
+    - name: Setup Node 16
+      uses: actions/setup-node@v2
+      with:
+        node-version: 16.x
+    - run: npm install --save-dev @datadog/datadog-ci
+    - name: Run Datadog Browser Tests
+      run: datadog-ci synthetics run-tests --config datadog/prod.json
