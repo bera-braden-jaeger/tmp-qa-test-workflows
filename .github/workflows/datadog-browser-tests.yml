@@ -14,6 +14,7 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: 16.x
-    - run: npm install --save-dev @datadog/datadog-ci
+    - name: Install Datadog-ci
+      run: npm install --save-dev @datadog/datadog-ci
     - name: Run Datadog Browser Tests
       run: datadog-ci synthetics run-tests --config datadog/prod.json
