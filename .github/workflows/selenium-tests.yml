@@ -13,6 +13,7 @@ jobs:
     steps:
     - name: Check out repository code
       uses: actions/checkout@v4
+    - run: which google-chrome
     - name: Setup Chrome
       uses: browser-actions/setup-chrome@v1
       with:
