@@ -1,0 +1,13 @@
+{
+    "apiKey": "f3a0cc90e9dab197e2458f253be25075",
+    "appKey": "963ad11b54b7efa1a939e4bc21c769e2fc414fc4",
+    "batchTimeout": 7200000,
+    "testSearchQuery": "tag:end-to-end",
+    "defaultTestOverrides": {
+        "startUrl":"http://localhost:3000"
+    },
+    "failOnCriticalErrors": true,
+    "failOnMissingTests": false,
+    "failOnTimeout": false,
+    "tunnel": true
+  }
